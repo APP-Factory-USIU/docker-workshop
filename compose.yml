@@ -1,0 +1,33 @@
+# Define parts of the application as services
+# Remember, indentation matters in YAML
+# Configs like services, volumes, networks, and mounts
+# Have no indentation
+# While parameters are indented
+
+services:
+  # Since this app has three parts, we define three services
+  backend:
+    build: # If using a differently named Dockerfile, expand the context and specify the Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000" # Match the port in the Dockerfile
+
+    environment: # Set environment variables for the backend service
+      - REDIS_HOST=database
+
+  frontend:
+    build: ./frontend # Otherwise Docker will use the default Dockerfile in the frontend directory
+    ports:
+      - "80:80" # Expose to view from the browser
+    environment:
+      - REDIS_HOST=database
+
+  database:
+    image: redis
+
+# Additional things you may want to add
+# name: - give your services a custom name
+# volumes: - for persistent storage
+# env_file: - load environment variables from a file
+# networks: - define custom networks for your services

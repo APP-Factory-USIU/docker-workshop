@@ -1,0 +1,12 @@
+# Works similar to .gitignore
+# Add files/directories you don't want to include in the Docker build
+README.md
+LICENSE
+DOCKER_PRACTICAL.md
+DOCKER_THEORY.md
+.gitignore
+.git/
+__pycache__
+*.pyc
+venv/
+.venv/
