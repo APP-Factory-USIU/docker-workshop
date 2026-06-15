@@ -27,7 +27,12 @@ services:
     image: redis
 
 # Additional things you may want to add
+
 # name: - give your services a custom name
 # volumes: - for persistent storage
 # env_file: - load environment variables from a file
 # networks: - define custom networks for your services
+# restart: - define conditions for restarting containers
+# depends_on: - control starting order for containers
+# healthcheck: - confirm containers are ready to receive requests
+# secrets: - more secure alternative to env_file
