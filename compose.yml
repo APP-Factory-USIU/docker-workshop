@@ -28,7 +28,7 @@ services:
 
 # Additional things you may want to add
 
-# name: - give your services a custom name
+# container_name: - give your services a custom name
 # volumes: - for persistent storage
 # env_file: - load environment variables from a file
 # networks: - define custom networks for your services
